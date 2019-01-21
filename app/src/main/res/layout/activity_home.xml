@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/atas"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:background="@color/dark_sky_blue">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/Profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="13dp"
+                android:background="@color/white_dark2"></LinearLayout>
+
+            <TextView
+                android:id="@+id/home_NamaKosan"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="28dp"
+                android:textColor="@color/Black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnPenghuni"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="115dp"
+            android:background="@color/white_dark"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/v_lnPenghuni"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_sky_blue"
+                android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/v_lnimgPenghuni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/penghuni"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/penghuni" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnTambahPenghuni"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="166dp"
+            android:background="@color/white_dark"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="28dp"
+                android:layout_height="26dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/new_user" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnHapusPenghuni"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="217dp"
+            android:background="@color/white_dark"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/delete" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnHomePenghuni"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="115dp"
+            android:layout_marginEnd="28dp"
+            android:layout_toEndOf="@+id/lnPenghuni"
+            android:background="@color/white_dark"
+            android:text="Penghuni" />
+
+        <Button
+            android:id="@+id/btnHomeTambahPenghuni"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="166dp"
+            android:layout_marginEnd="28dp"
+            android:layout_toEndOf="@+id/lnTambahPenghuni"
+            android:background="@color/white_dark"
+            android:text="Tambah Penghuni" />
+
+        <Button
+            android:id="@+id/btnHomeHapusPenghuni"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="217dp"
+            android:layout_marginEnd="28dp"
+            android:layout_toEndOf="@+id/lnHapusPenghuni"
+            android:background="@color/white_dark"
+            android:text="Hapus Penghuni" />
+
+        <RelativeLayout
+            android:layout_width="307dp"
+            android:layout_height="201dp"
+            android:layout_below="@+id/atas"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="199dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white_dark">
+
+            <LinearLayout
+                android:layout_width="3dp"
+                android:layout_height="130dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="153dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="51dp"
+                android:background="@color/Black"></LinearLayout>
+
+            <Button
+                android:id="@+id/btnHomePemasukan"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="175dp"
+                android:layout_marginTop="35dp"
+                android:background="@color/white_dark2"
+                android:text="Pemasukan" />
+
+            <Button
+                android:id="@+id/btnHomePengeluaran"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="175dp"
+                android:layout_marginBottom="71dp"
+                android:background="@color/white_dark2"
+                android:text="Pengeluaran" />
+
+            <Button
+                android:id="@+id/btnHomeInfoBangunan"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/dark_sky_blue"
+                android:text="Informasi Bangunan" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="56dp"
+                android:text="Status"
+                android:textColor="@color/Black" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/textView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="0dp"
+                android:text="Tingkat Hunian"
+                android:textColor="@color/Black" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

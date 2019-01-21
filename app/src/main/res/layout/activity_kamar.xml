@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    tools:context=".KamarActivity">
+
+
+    <Button
+        android:id="@+id/btnTambahKamar"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/lnbtnTambahKamar"
+        android:background="@color/dark_grey_blue"
+        android:text="Tambah Bangunan"
+        android:textColor="@color/white_dark"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/lnbtnTambahKamar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="310dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/slate_two">
+
+        <ImageView
+            android:id="@+id/imagebtnTambahKamar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            app:srcCompat="@drawable/plus" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerviewkamar"
+        android:layout_marginTop="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
