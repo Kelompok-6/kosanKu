@@ -3,6 +3,7 @@ package com.kosanku.kelompok6.kosanku;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -40,9 +41,10 @@ public class BangunanActivity extends AppCompatActivity implements View.OnClickL
     String id;
 
     Button btnTambahBangunan;
+    ImageView masuk_lihatKamar;
     ImageView EditBangunan;
 
-    private static String URL_REGIST = "http://192.168.1.13/KosanKu/android_register_login/TampilBangunan.php";
+    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TampilBangunan.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +59,7 @@ public class BangunanActivity extends AppCompatActivity implements View.OnClickL
 
         list = new ArrayList<>();
         adapterBangunan = new AdapterBangunan(getApplicationContext(),list);
-        session= new Session(this);
+        session = new Session(this);
 
         HashMap<String, String> user = session.getUserDetails();
         id = user.get(session.KEY_IDADMIN);
@@ -112,6 +114,12 @@ public class BangunanActivity extends AppCompatActivity implements View.OnClickL
         startActivity(intent);
     }
 
+    private void Kamar(){
+        Intent intent = new Intent(getApplicationContext(), KamarActivity.class);
+
+        //    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
     @Override
     public void onClick(View v) {

@@ -33,7 +33,7 @@ public class TambahPenghuniActivity extends AppCompatActivity implements View.On
     private EditText TambahNama, TambahAlamat, TambahUmur, TambahNohp, TambahPekerjaan, TambahNoKamar, TambahLamaTinggal, TambahStatusBayar, JumlahBayar;
     private Button btn_TambahPenghuni;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.1.13/KosanKu/android_register_login/TambahPenghuni.php";
+    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TambahPenghuni.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

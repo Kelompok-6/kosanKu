@@ -5,23 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     tools:context=".KamarActivity">
 
+
     <Button
-        android:id="@+id/btnTambahBangunan"
+        android:id="@+id/btnTambahKamar"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginEnd="0dp"
-        android:layout_toStartOf="@+id/lnTambahBangunan"
+        android:layout_toStartOf="@+id/lnbtnTambahKamar"
         android:background="@color/dark_grey_blue"
-        android:text="Tambah Kamar"
+        android:text="Tambah Bangunan"
         android:textColor="@color/white_dark"
         android:textSize="18sp" />
 
     <LinearLayout
-        android:id="@+id/lnTambahBangunan"
+        android:id="@+id/lnbtnTambahKamar"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
@@ -31,7 +30,7 @@
         android:background="@color/slate_two">
 
         <ImageView
-            android:id="@+id/imagebtnTambahBangunan"
+            android:id="@+id/imagebtnTambahKamar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -40,73 +39,12 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerviewkamar"
+        android:layout_marginTop="56dp"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_below="@+id/btnTambahBangunan"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white_dark2"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp">
+        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/viewBangunan"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:background="@color/white_dark"></RelativeLayout>
+    </android.support.v7.widget.RecyclerView>
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/viewPhoto"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="19dp"
-                android:layout_marginEnd="13dp"
-                android:layout_toEndOf="@+id/viewPhoto"
-                android:text="No Kamar : "
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/viewPhoto"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="40dp"
-                android:layout_marginStart="19dp"
-                android:layout_marginEnd="13dp"
-                android:layout_toEndOf="@+id/viewPhoto"
-                android:text="Status Kamar : "
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/viewPhoto"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="60dp"
-                android:layout_marginStart="19dp"
-                android:layout_marginEnd="13dp"
-                android:layout_toEndOf="@+id/viewPhoto"
-                android:text="Harga : "
-                android:textSize="12sp" />
-
-            <ImageView
-                android:id="@+id/EditKamar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                app:srcCompat="@drawable/settings" />
-
-        </RelativeLayout>
-
-
-    </android.support.v7.widget.CardView>
 </RelativeLayout>

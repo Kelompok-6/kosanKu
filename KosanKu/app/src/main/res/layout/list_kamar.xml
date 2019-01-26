@@ -17,13 +17,13 @@
             android:paddingBottom="10dp">
 
             <ImageView
-                android:id="@+id/lihatKamar"
+                android:id="@+id/viewPhoto"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@color/white_dark" />
 
             <TextView
-                android:id="@+id/txt_NamaBangunan"
+                android:id="@+id/txt_NoKamar"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/viewPhoto"
@@ -35,7 +35,7 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/txt_Jumlah"
+                android:id="@+id/txt_StatusKamar"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/viewPhoto"
@@ -47,10 +47,10 @@
                 android:textSize="12sp" />
 
             <ImageView
-                android:id="@+id/EditBangunan"
+                android:id="@+id/EditKamar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/lihatKamar"
+                android:layout_alignBottom="@+id/viewPhoto"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="0dp"

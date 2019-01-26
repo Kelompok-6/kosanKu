@@ -35,7 +35,7 @@ public class PenghuniActivity extends AppCompatActivity {
     Session session;
     String id;
 
-    private static String URL_REGIST = "http://192.168.1.13/KosanKu/android_register_login/TampilPenghuni.php";
+    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TampilPenghuni.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
