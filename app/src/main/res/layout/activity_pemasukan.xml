@@ -46,14 +46,29 @@
             </android.support.v7.widget.CardView>
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/Rp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="67dp"
+                android:layout_marginStart="94dp"
+                android:layout_marginBottom="66dp"
                 android:gravity="center"
                 android:text="Rp "
-                android:textColor="@color/Black"/>
+                android:textColor="@color/Black" />
+
+            <TextView
+                android:id="@+id/JumlahPendapatan"
+                android:layout_width="204dp"
+                android:layout_height="30dp"
+                android:layout_alignStart="@+id/Rp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="90dp"
+                android:layout_marginBottom="65dp"
+                android:gravity="center"
+                android:textColor="@color/Black" />
             
         </RelativeLayout>
     </android.support.v7.widget.CardView>

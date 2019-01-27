@@ -18,8 +18,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     LinearLayout Profile;
     Button btnTambahPenghuni, btnPenghuni, btnHapusPenghuni, btnBangunan, btnPemasukan, btnPengeluaran;
-    LinearLayout v_lnPenghuni;
-    ImageView v_lnimgPenghuni;
+    LinearLayout v_lnPenghuni, v_lnTambahPenghuni, v_lnHapusPenghuni;
+    ImageView v_lnimgPenghuni, v_lnimglnTambahPenghuni, v_lnimgHapusPenghuni;
     TextView home_NamaKosan;
 
     Session session1;
@@ -37,6 +37,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         v_lnPenghuni = findViewById(R.id.v_lnPenghuni);
         v_lnimgPenghuni = findViewById(R.id.v_lnimgPenghuni);
+
+        v_lnTambahPenghuni = findViewById(R.id.v_lnTambahPenghuni);
+        v_lnimglnTambahPenghuni = findViewById(R.id.v_lnimglnTambahPenghuni);
+
+        v_lnHapusPenghuni = findViewById(R.id.v_lnHapusPenghuni);
+        v_lnimgHapusPenghuni = findViewById(R.id.v_lnimgHapusPenghuni);
+
         home_NamaKosan = findViewById(R.id.home_NamaKosan);
 
         HashMap<String,String> user=session1.getUserDetails();
@@ -119,15 +126,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         v_lnPenghuni.setVisibility(View.GONE);
         v_lnimgPenghuni.setVisibility(View.GONE);
+        v_lnTambahPenghuni.setVisibility(View.GONE);
+        v_lnimglnTambahPenghuni.setVisibility(View.GONE);
+        v_lnHapusPenghuni.setVisibility(View.GONE);
+        v_lnimgHapusPenghuni.setVisibility(View.VISIBLE);
+
         if(v == Profile){
             Profile();
         } else if (v == btnTambahPenghuni) {
+            v_lnTambahPenghuni.setVisibility(View.VISIBLE);
+            v_lnimglnTambahPenghuni.setVisibility(View.VISIBLE);
             TambahPenghuni();
         } else if (v == btnPenghuni) {
             v_lnPenghuni.setVisibility(View.VISIBLE);
             v_lnimgPenghuni.setVisibility(View.VISIBLE);
             Penghuni();
         } else if (v == btnHapusPenghuni) {
+            v_lnHapusPenghuni.setVisibility(View.VISIBLE);
+            v_lnimgHapusPenghuni.setVisibility(View.VISIBLE);
             HapusPenghuni();
         } else if (v == btnBangunan) {
             Bangunan();

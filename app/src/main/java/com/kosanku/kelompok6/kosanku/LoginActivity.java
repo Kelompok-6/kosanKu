@@ -72,7 +72,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "Password Harap Diisi!", Toast.LENGTH_SHORT).show();
             return;
         }
-
         Response.Listener<String> response = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

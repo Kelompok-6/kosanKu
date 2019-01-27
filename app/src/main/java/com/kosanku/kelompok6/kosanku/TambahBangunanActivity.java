@@ -32,7 +32,7 @@ public class TambahBangunanActivity extends AppCompatActivity implements View.On
     private EditText NamaBangunan, JumlahKamar;
     private Button TambahBangunan;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TambahBangunan.php";
+    private static String URL_REGIST = "http://192.168.43.38/KosanKu/android_register_login/TambahBangunan.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +85,9 @@ public class TambahBangunanActivity extends AppCompatActivity implements View.On
                                 String success = jsonObject.getString("success");
 
                                 if (success.equals("1")) {
+                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                     Toast.makeText(TambahBangunanActivity.this, "Tambah Bangunan Succes! ", Toast.LENGTH_SHORT).show();
+                                    startActivity(intent);
                                     loading.setVisibility(View.GONE);
                                     TambahBangunan.setVisibility(View.VISIBLE);
                                     Bangunan();

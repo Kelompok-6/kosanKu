@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -17,7 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.kosanku.kelompok6.kosanku.Data.AdapterKamar;
+import com.kosanku.kelompok6.kosanku.Adapter.AdapterKamar;
 import com.kosanku.kelompok6.kosanku.Data.DataKamar;
 import com.kosanku.kelompok6.kosanku.session.Session;
 
@@ -36,20 +35,16 @@ public class KamarActivity extends AppCompatActivity implements View.OnClickList
     AdapterKamar adapterKamar;
     List<DataKamar> list;
     Session session;
-    String id;
+    String id, idbangunan;
 
-    Button btnTambahKamar;
-    ImageView EditKamar;
+    Button btn_TambahKamar;
 
-    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TampilKamar.php";
+    private static String URL_REGIST = "http://192.168.43.38/KosanKu/android_register_login/TampilKamar.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kamar);
-
-        btnTambahKamar = (Button) findViewById(R.id.btnTambahKamar);
-        btnTambahKamar.setOnClickListener(this);
 
         recyclerView = findViewById(R.id.recyclerviewkamar);
         recyclerView.setHasFixedSize(true);
@@ -57,11 +52,16 @@ public class KamarActivity extends AppCompatActivity implements View.OnClickList
 
         list = new ArrayList<>();
         adapterKamar = new AdapterKamar(getApplicationContext(),list);
-        session = new Session(this);
+        session= new Session(this);
 
         HashMap<String, String> user = session.getUserDetails();
-        id = user.get(session.KEY_IDKAMAR);
+        id = user.get(session.KEY_IDADMIN);
+
+        idbangunan= getIntent().getStringExtra("idbangunan");
         getData();
+
+        btn_TambahKamar = findViewById(R.id.btnTambahKamar);
+        btn_TambahKamar.setOnClickListener(this);
     }
 
     private void getData(){
@@ -75,28 +75,29 @@ public class KamarActivity extends AppCompatActivity implements View.OnClickList
                             for(int i =0; i<array.length(); i++){
                                 JSONObject object = array.getJSONObject(i);
                                 DataKamar dataKamar = new DataKamar(
-                                        "Nomor Kamar : "+object.getString("NomorKamar"),
-                                        "Status Kamar : " + object.getString("StatusKamar"));
+                                        object.getString("NomorKamar"),
+                                        object.getString("StatusKamar"),
+                                        object.getString("idkamar"));
                                 list.add(dataKamar);
                             }
                             recyclerView.setAdapter(adapterKamar);
                         }  catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(KamarActivity.this, "Tambah Kamar Error! " + e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(KamarActivity.this, "Tampil Kamar Error! " + e.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(KamarActivity.this, "Tambah Kamar Error! " + error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(KamarActivity.this, "Tampil Kamar Error! " + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("idkamar",id);
+                params.put("idbangunan",idbangunan);
                 return params;
             }
         };
@@ -105,18 +106,12 @@ public class KamarActivity extends AppCompatActivity implements View.OnClickList
         requestQueue.add(stringRequest);
     }
 
-    private void TambahKamar(){
-//        Intent intent = new Intent(getApplicationContext(), TambahBangunanActivity.class);
-//
-//        //    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(intent);
-    }
-
-
     @Override
     public void onClick(View v) {
-        if (v == btnTambahKamar) {
-            TambahKamar();
+        if(v == btn_TambahKamar){
+            Intent intent = new Intent(getApplicationContext(), TambahKamarActivity.class);
+            intent.putExtra("idbangunan",idbangunan);
+            startActivity(intent);
         }
     }
 }

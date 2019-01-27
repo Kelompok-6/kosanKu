@@ -7,20 +7,19 @@
     android:paddingTop="16dp"
     tools:context=".KamarActivity">
 
-
     <Button
         android:id="@+id/btnTambahKamar"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginEnd="0dp"
-        android:layout_toStartOf="@+id/lnbtnTambahKamar"
+        android:layout_toStartOf="@+id/lnTambahBangunan"
         android:background="@color/dark_grey_blue"
-        android:text="Tambah Bangunan"
+        android:text="Tambah Kamar"
         android:textColor="@color/white_dark"
         android:textSize="18sp" />
 
     <LinearLayout
-        android:id="@+id/lnbtnTambahKamar"
+        android:id="@+id/lnTambahBangunan"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
@@ -30,7 +29,7 @@
         android:background="@color/slate_two">
 
         <ImageView
-            android:id="@+id/imagebtnTambahKamar"
+            android:id="@+id/imagebtnTambahBangunan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -46,5 +45,4 @@
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
-
 </RelativeLayout>

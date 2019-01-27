@@ -63,6 +63,25 @@
             android:background="@color/white_dark"
             android:orientation="horizontal">
 
+            <LinearLayout
+                android:id="@+id/v_lnEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_sky_blue"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+
+                <ImageView
+                    android:id="@+id/v_lnimgEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/email"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
             <ImageView
                 android:id="@+id/imageView12"
                 android:layout_width="wrap_content"
@@ -82,6 +101,25 @@
             android:layout_marginTop="296dp"
             android:background="@color/white_dark"
             android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/v_lnAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_sky_blue"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+
+                <ImageView
+                    android:id="@+id/v_lnimgAlamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/alamat"
+                    android:visibility="gone"/>
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView13"
@@ -103,6 +141,25 @@
             android:background="@color/white_dark"
             android:orientation="horizontal">
 
+            <LinearLayout
+                android:id="@+id/v_lnNohp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_sky_blue"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+
+                <ImageView
+                    android:id="@+id/v_lnimgNohp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/call"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="wrap_content"
@@ -122,6 +179,25 @@
             android:layout_marginTop="398dp"
             android:background="@color/white_dark"
             android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/v_lnEdit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_sky_blue"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+
+                <ImageView
+                    android:id="@+id/v_lnimgEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/settings"
+                    android:visibility="gone"/>
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView15"

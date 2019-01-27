@@ -3,13 +3,10 @@ package com.kosanku.kelompok6.kosanku;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -19,7 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.kosanku.kelompok6.kosanku.Data.AdapterBangunan;
+import com.kosanku.kelompok6.kosanku.Adapter.AdapterBangunan;
 import com.kosanku.kelompok6.kosanku.Data.DataBangunan;
 import com.kosanku.kelompok6.kosanku.session.Session;
 
@@ -40,18 +37,14 @@ public class BangunanActivity extends AppCompatActivity implements View.OnClickL
     Session session;
     String id;
 
-    Button btnTambahBangunan;
-    ImageView masuk_lihatKamar;
-    ImageView EditBangunan;
+    Button btn_TambahBangunan;
 
-    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TampilBangunan.php";
+    private static String URL_REGIST = "http://192.168.43.38/KosanKu/android_register_login/TampilBangunan.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bangunan);
-
-        btnTambahBangunan = (Button) findViewById(R.id.btnTambahBangunan);
-        btnTambahBangunan.setOnClickListener(this);
 
         recyclerView = findViewById(R.id.recyclerviewbangunan);
         recyclerView.setHasFixedSize(true);
@@ -59,11 +52,14 @@ public class BangunanActivity extends AppCompatActivity implements View.OnClickL
 
         list = new ArrayList<>();
         adapterBangunan = new AdapterBangunan(getApplicationContext(),list);
-        session = new Session(this);
+        session= new Session(this);
 
         HashMap<String, String> user = session.getUserDetails();
         id = user.get(session.KEY_IDADMIN);
         getData();
+
+        btn_TambahBangunan = findViewById(R.id.btnTambahBangunan);
+        btn_TambahBangunan.setOnClickListener(this);
     }
 
     private void getData(){
@@ -77,21 +73,22 @@ public class BangunanActivity extends AppCompatActivity implements View.OnClickL
                             for(int i =0; i<array.length(); i++){
                                 JSONObject object = array.getJSONObject(i);
                                 DataBangunan dataBangunan = new DataBangunan(
-                                        "Nama Bangunan : "+object.getString("NamaBangunan"),
-                                        "Jumlah Kamar : " + object.getString("JumlahKamar"));
+                                        object.getString("NamaBangunan"),
+                                        object.getString("JumlahKamar"),
+                                        object.getString("idbangunan"));
                                 list.add(dataBangunan);
                             }
                             recyclerView.setAdapter(adapterBangunan);
                         }  catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(BangunanActivity.this, "Tambah Bangunan Error! " + e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BangunanActivity.this, "Tampil Bangunan Error! " + e.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(BangunanActivity.this, "Tambah Bangunan Error! " + error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BangunanActivity.this, "Tampil Bangunan Error! " + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
@@ -109,21 +106,13 @@ public class BangunanActivity extends AppCompatActivity implements View.OnClickL
 
     private void TambahBangunan(){
         Intent intent = new Intent(getApplicationContext(), TambahBangunanActivity.class);
-
-        //    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-
-    private void Kamar(){
-        Intent intent = new Intent(getApplicationContext(), KamarActivity.class);
-
         //    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     @Override
     public void onClick(View v) {
-        if (v == btnTambahBangunan) {
+        if(v == btn_TambahBangunan){
             TambahBangunan();
         }
     }

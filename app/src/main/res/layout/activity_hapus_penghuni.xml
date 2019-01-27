@@ -7,7 +7,7 @@
     android:paddingTop="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".TambahPenghuniActivity">
+    tools:context=".HapusPenghuniActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,14 +34,14 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahNama"
+                <TextView
+                    android:id="@+id/txt_HapusNama"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
                     android:hint="Nama Penghuni"
                     android:textColor="@color/Black"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:inputType="textPersonName"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -53,8 +53,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahAlamat"
+                <TextView
+                    android:id="@+id/txt_HapusAlamat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -73,8 +73,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahUmur"
+                <TextView
+                    android:id="@+id/txt_HapusUmur"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -104,8 +104,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahNohp"
+                <TextView
+                    android:id="@+id/txt_HapusNohp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -123,8 +123,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahPekerjaan"
+                <TextView
+                    android:id="@+id/txt_HapusPekerjaan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -142,8 +142,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahNoKamar"
+                <TextView
+                    android:id="@+id/txt_HapusNoKamar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -162,8 +162,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahLamaTinggal"
+                <TextView
+                    android:id="@+id/txt_HapusLamaTinggal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -193,8 +193,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtTambahStatusBayar"
+                <TextView
+                    android:id="@+id/txt_HapusStatusBayar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -212,8 +212,8 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <EditText
-                    android:id="@+id/txtJumlahBayar"
+                <TextView
+                    android:id="@+id/txt_HapusJumlahBayar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
@@ -226,30 +226,29 @@
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-        <ProgressBar
-            android:id="@+id/loading"
-            android:layout_width="320dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3"
-            app:layout_constraintVertical_bias="0.0"
-            android:visibility="gone"/>
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintVertical_bias="0.0"
+        android:visibility="gone"/>
 
-        <Button
-            android:id="@+id/btn_TambahPenghuni"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/dark_grey_blue"
-            android:text="TAMBAH"
-            android:textSize="18sp"
-            android:textColor="@color/white_dark"/>
+    <Button
+        android:id="@+id/btn_HapusPenghuni"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/dark_grey_blue"
+        android:text="HAPUS"
+        android:textSize="18sp"
+        android:textColor="@color/white_dark"/>
 
     </LinearLayout>
-
 </ScrollView>

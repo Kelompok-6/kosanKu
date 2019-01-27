@@ -2,15 +2,16 @@ package com.kosanku.kelompok6.kosanku.Data;
 
 public class DataBangunan {
 
-    String namaBangunan, jumlah;
+    String namaBangunan, jumlahKamar, id;
 
     public DataBangunan(){
 
     }
 
-    public DataBangunan(String namaBangunan, String jumlah){
+    public DataBangunan(String namaBangunan, String jumlahKamar, String idbangunan){
         this.namaBangunan = namaBangunan;
-        this.jumlah = jumlah;
+        this.jumlahKamar = jumlahKamar;
+        this.id = idbangunan;
     }
 
     public String getNamaBangunan() {
@@ -18,6 +19,12 @@ public class DataBangunan {
     }
 
     public String getJumlah() {
-        return jumlah;
+        return jumlahKamar;
     }
+
+    public String getId() {
+        return id;
+    }
+
+
 }

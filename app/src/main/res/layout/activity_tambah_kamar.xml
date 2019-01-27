@@ -7,7 +7,7 @@
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
-    tools:context=".EditBangunanActivity">
+    tools:context=".TambahKamarActivity">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -30,11 +30,11 @@
                 android:paddingRight="3dp">
 
                 <EditText
-                    android:id="@+id/txt_EditNamaBangunan"
+                    android:id="@+id/txt_TambahNomorKamar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
-                    android:hint="Nama Bangunan"
+                    android:hint="Nomor Kamar"
                     android:inputType="textPersonName"
                     android:textColor="@color/Black"
                     android:textSize="20dp" />
@@ -49,12 +49,12 @@
                 android:paddingRight="3dp">
 
                 <EditText
-                    android:id="@+id/txt_EditJumlahKamar"
+                    android:id="@+id/txt_TambahStatusKamar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Transparan"
-                    android:hint="Jumlah Kamar"
-                    android:inputType="number"
+                    android:hint="Status Kamar"
+                    android:inputType="textPersonName"
                     android:textColor="@color/Black"
                     android:textSize="20dp" />
 
@@ -72,25 +72,15 @@
         android:textColor="@color/white_two"
         android:textSize="18sp"
         android:visibility="gone"/>
+
     <Button
-        android:id="@+id/btn_EditBangunan"
+        android:id="@+id/btn_TambahKamar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="176dp"
         android:background="@color/dark_grey_blue"
-        android:text="UPDATE"
-        android:textColor="@color/white_two"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/btn_HapusBangunan"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="236dp"
-        android:background="@color/dark_grey_blue"
-        android:text="HAPUS"
+        android:text="Tambah Kamar"
         android:textColor="@color/white_two"
         android:textSize="18sp" />
 

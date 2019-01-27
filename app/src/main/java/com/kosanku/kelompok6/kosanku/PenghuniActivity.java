@@ -1,10 +1,10 @@
 package com.kosanku.kelompok6.kosanku;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -14,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.kosanku.kelompok6.kosanku.Data.AdapterPenghuni;
+import com.kosanku.kelompok6.kosanku.Adapter.AdapterPenghuni;
 import com.kosanku.kelompok6.kosanku.Data.DataPenghuni;
 import com.kosanku.kelompok6.kosanku.session.Session;
 
@@ -35,7 +35,7 @@ public class PenghuniActivity extends AppCompatActivity {
     Session session;
     String id;
 
-    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TampilPenghuni.php";
+    private static String URL_REGIST = "http://192.168.43.38/KosanKu/android_register_login/TampilPenghuni.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,6 @@ public class PenghuniActivity extends AppCompatActivity {
         getData();
     }
 
-
     private void getData(){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
@@ -68,14 +67,15 @@ public class PenghuniActivity extends AppCompatActivity {
                                 JSONObject object = array.getJSONObject(i);
                                 DataPenghuni dataPenghuni = new DataPenghuni(
                                         object.getString("NamaPenghuni"),
-                                        "Alamat : "+object.getString("Alamat"),
-                                        "Umur : " + object.getString("Umur") + " Tahun",
-                                        "NoHp : " + object.getString("NoHp"),
-                                        "Pekerjaan : " + object.getString("Pekerjaan"),
-                                        "Kamar : " + object.getString("NoKamarHuni"),
-                                        "Lama Tinggal : " + object.getString("LamaTinggal") + " Bulan",
-                                        "Status Bayar : " + object.getString("StatusBayar"),
-                                        "Jumlah Bayar : " + object.getString("JumlahBayar"));
+                                        object.getString("Alamat"),
+                                        object.getString("Pekerjaan"),
+                                        object.getString("Umur"),
+                                        object.getString("NoKamarHuni"),
+                                        object.getString("LamaTinggal"),
+                                        object.getString("StatusBayar"),
+                                        object.getString("NoHp"),
+                                        object.getString("JumlahBayar"),
+                                        object.getString("idpenghuni"));
                                 list.add(dataPenghuni);
                             }
                             recyclerView.setAdapter(adapterPenghuni);
@@ -104,4 +104,9 @@ public class PenghuniActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    @Override
+    public void onBackPressed() {
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+            finish();
+    }
 }

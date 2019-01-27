@@ -29,7 +29,6 @@ public class Session {
     private static final String IS_LOGIN = "IsLoggedIn";
 
     // Email address (make variable public to access from outside)
-    public static final String KEY_IDKAMAR = "idkamar";
     public static final String KEY_IDADMIN = "idadmin";
     public static final String KEY_NAMAKOSAN = "NamaKosan";
     public static final String KEY_EMAIL = "Email";
@@ -44,7 +43,7 @@ public class Session {
     }
 
 
-    public void createLoginSession( String idadmin, String NamaKosan, String Email, String Alamat, String Nohp){
+    public void createLoginSession(String idadmin, String NamaKosan, String Email, String Alamat, String Nohp){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
@@ -77,6 +76,8 @@ public class Session {
         }
 
     }
+
+
 
     public HashMap<String, String> getUserDetails(){
         HashMap<String, String> user = new HashMap<String, String>();

@@ -2,22 +2,27 @@ package com.kosanku.kelompok6.kosanku.Data;
 
 public class DataKamar {
 
-    String noKamar, statusKamar;
+    String nomorKamar, statusKamar, id;
 
     public DataKamar(){
 
     }
 
-    public DataKamar(String noKamar, String statusKamar){
-        this.noKamar = noKamar;
+    public DataKamar(String nomorKamar, String statusKamar, String idkamar){
+        this.nomorKamar = nomorKamar;
         this.statusKamar = statusKamar;
+        this.id = idkamar;
     }
 
-    public String getNoKamar() {
-        return noKamar;
+    public String getNomorKamar() {
+        return nomorKamar;
     }
 
     public String getStatusKamar() {
         return statusKamar;
+    }
+
+    public String getId() {
+        return id;
     }
 }

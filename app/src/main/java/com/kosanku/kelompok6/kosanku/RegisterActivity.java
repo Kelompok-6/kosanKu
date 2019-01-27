@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText NamaKosan, Username, Email, Alamat, Nohp, Password;
     private Button btn_Register;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/register.php";
+    private static String URL_REGIST = "http://192.168.43.38/KosanKu/android_register_login/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

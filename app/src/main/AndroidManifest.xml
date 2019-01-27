@@ -20,11 +20,13 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".HomeActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".TambahPenghuniActivity"
-            android:theme="@style/AppThemeLogin"/>
+        <activity
+            android:name=".TambahPenghuniActivity"
+            android:theme="@style/AppThemeLogin" />
         <activity android:name=".PenghuniActivity" />
         <activity android:name=".HapusActivity" />
         <activity android:name=".BangunanActivity" />
@@ -32,11 +34,16 @@
         <activity android:name=".TambahBangunanActivity" />
         <activity android:name=".PemasukanActivity" />
         <activity android:name=".PengeluaranActivity" />
-        <activity android:name=".EditBangunanActivity"></activity>
+        <activity android:name=".EditBangunanActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".EditPenghuniActivity" />
+        <activity android:name=".HapusPenghuniActivity" />
+        <activity android:name=".TambahKamarActivity" />
+        <activity android:name=".EditKamarActivity"></activity>
     </application>
 
 </manifest>

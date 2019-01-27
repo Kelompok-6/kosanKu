@@ -12,8 +12,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.kosanku.kelompok6.kosanku.request.Hapus_Bangunan_Request;
+import com.kosanku.kelompok6.kosanku.request.Hapus_Kamar_Request;
 import com.kosanku.kelompok6.kosanku.request.Update_Bangunan_Request;
-import com.kosanku.kelompok6.kosanku.request.Update_Penghuni_Request;
+import com.kosanku.kelompok6.kosanku.request.Update_Kamar_Request;
 import com.kosanku.kelompok6.kosanku.session.Session;
 
 import org.json.JSONException;
@@ -21,13 +22,13 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class EditBangunanActivity extends AppCompatActivity implements View.OnClickListener {
+public class EditKamarActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btn_EditBangunan, btn_HapusBangunan;
-    EditText Edit_NamaBangunan;
-    EditText Edit_JumlahKamar;
+    Button btn_EditKamar, btn_HapusKamar;
+    EditText Edit_NomorKamar;
+    EditText Edit_StatusKamar;
 
-    String namaBangunan, jumlahKamar, idbangunan;
+    String nomorKamar, statusKamar, idkamar;
 
     public String idadmin;
     Session session1;
@@ -35,15 +36,16 @@ public class EditBangunanActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_bangunan);
+        setContentView(R.layout.activity_edit_kamar);
 
-        Edit_NamaBangunan = findViewById(R.id.txt_EditNamaBangunan);
-        Edit_JumlahKamar = findViewById(R.id.txt_EditJumlahKamar);
+        Edit_NomorKamar = findViewById(R.id.txt_EditNomorKamar);
+        Edit_StatusKamar = findViewById(R.id.txt_EditStatusKamar);
 
-        btn_EditBangunan = findViewById(R.id.btn_EditBangunan);
-        btn_HapusBangunan = findViewById(R.id.btn_HapusBangunan);
-        btn_EditBangunan.setOnClickListener(this);
-        btn_HapusBangunan.setOnClickListener(this);
+        btn_EditKamar = findViewById(R.id.btn_EditKamar);
+        btn_HapusKamar = findViewById(R.id.btn_HapusKamar);
+
+        btn_EditKamar.setOnClickListener(this);
+        btn_HapusKamar.setOnClickListener(this);
 
         session1 = new Session(getApplicationContext());
         HashMap<String,String> user = session1.getUserDetails();
@@ -52,17 +54,17 @@ public class EditBangunanActivity extends AppCompatActivity implements View.OnCl
         Intent intent = getIntent();
         Bundle bundle= intent.getExtras();
 
-        namaBangunan = (String)bundle.get("NamaBangunan");
-        jumlahKamar = (String)bundle.get("JumlahKamar");
-        idbangunan = (String)bundle.get("idbangunan");
+        nomorKamar = (String)bundle.get("NomorKamar");
+        statusKamar = (String)bundle.get("StatusKamar");
+        idkamar = (String)bundle.get("idkamar");
 
-        Edit_NamaBangunan.setText(namaBangunan);
-        Edit_JumlahKamar.setText(jumlahKamar);
+        Edit_NomorKamar.setText(nomorKamar);
+        Edit_StatusKamar.setText(statusKamar);
     }
 
     private void update(){
-        String namaBangunan = Edit_NamaBangunan.getText().toString().trim();
-        String jumlahKamar = Edit_JumlahKamar.getText().toString().trim();
+        String nomorKamar = Edit_NomorKamar.getText().toString().trim();
+        String statusKamar = Edit_StatusKamar.getText().toString().trim();
 
         Response.Listener<String> listener = new Response.Listener<String>() {
             @Override
@@ -71,7 +73,7 @@ public class EditBangunanActivity extends AppCompatActivity implements View.OnCl
                     JSONObject jsonObject = new JSONObject(response);
                     boolean success = jsonObject.getBoolean("success");
                     if(success){
-                        Toast.makeText(EditBangunanActivity.this, "Update data berhasil", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditKamarActivity.this, "Update data berhasil", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|intent.FLAG_ACTIVITY_CLEAR_TASK|intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
@@ -82,9 +84,9 @@ public class EditBangunanActivity extends AppCompatActivity implements View.OnCl
                 }
             }
         };
-        Update_Bangunan_Request updateBangunanRequest = new Update_Bangunan_Request(namaBangunan, jumlahKamar, idbangunan, listener);
-        RequestQueue requestQueue = Volley.newRequestQueue(EditBangunanActivity.this);
-        requestQueue.add(updateBangunanRequest);
+        Update_Kamar_Request updateKamarRequest = new Update_Kamar_Request(nomorKamar, statusKamar, idkamar, listener);
+        RequestQueue requestQueue = Volley.newRequestQueue(EditKamarActivity.this);
+        requestQueue.add(updateKamarRequest);
     }
 
     private void hapus(){
@@ -106,16 +108,16 @@ public class EditBangunanActivity extends AppCompatActivity implements View.OnCl
                 }
             }
         };
-        Hapus_Bangunan_Request hapusBangunanRequest = new Hapus_Bangunan_Request(idbangunan, listener);
-        RequestQueue requestQueue = Volley.newRequestQueue(EditBangunanActivity.this);
-        requestQueue.add(hapusBangunanRequest);
+        Hapus_Kamar_Request hapusKamarRequest = new Hapus_Kamar_Request(idkamar, listener);
+        RequestQueue requestQueue = Volley.newRequestQueue(EditKamarActivity.this);
+        requestQueue.add(hapusKamarRequest);
     }
 
     @Override
     public void onClick(View v) {
-        if (v == btn_EditBangunan) {
+        if (v == btn_EditKamar) {
             update();
-        } else if (v == btn_HapusBangunan) {
+        } else if (v == btn_HapusKamar) {
             hapus();
         }
     }

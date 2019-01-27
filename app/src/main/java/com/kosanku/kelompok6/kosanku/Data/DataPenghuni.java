@@ -2,13 +2,13 @@ package com.kosanku.kelompok6.kosanku.Data;
 
 public class DataPenghuni {
 
-    String namaPenghuni, asal, pekerjaan, umur, noKamar, lamaTinggal, pembayaran, noHp, JumlahBayar;
+    String namaPenghuni, asal, pekerjaan, umur, noKamar, lamaTinggal, pembayaran, noHp, JumlahBayar,id;
 
     public DataPenghuni(){
 
     }
 
-    public DataPenghuni(String namaPenghuni, String asal, String pekerjaan, String umur, String noKamar, String lamaTinggal, String pembayaran, String noHp, String JumlahBayar){
+    public DataPenghuni(String namaPenghuni, String asal, String pekerjaan, String umur, String noKamar, String lamaTinggal, String pembayaran, String noHp, String JumlahBayar, String id){
         this.namaPenghuni = namaPenghuni;
         this.asal = asal;
         this.pekerjaan = pekerjaan;
@@ -18,6 +18,7 @@ public class DataPenghuni {
         this.pembayaran = pembayaran;
         this.noHp = noHp;
         this.JumlahBayar = JumlahBayar;
+        this.id = id;
     }
 
     public String getNamaPenghuni() {
@@ -54,5 +55,9 @@ public class DataPenghuni {
 
     public String getJumlahBayar() {
         return JumlahBayar;
+    }
+
+    public String getId() {
+        return id;
     }
 }
