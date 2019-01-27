@@ -12,13 +12,13 @@ import com.kosanku.kelompok6.kosanku.R;
 
 import java.util.List;
 
-public class AdapterBangunan extends RecyclerView.Adapter<AdapterBangunan.ViewHolder> {
+public class AdapterKamar extends RecyclerView.Adapter<AdapterKamar.ViewHolder> {
 
-    private List<DataBangunan> list_data;
+    private List<DataKamar> list_data;
     private Context context;
     private LayoutInflater inflater;
 
-    public AdapterBangunan(Context context, List<DataBangunan> list_data) {
+    public AdapterKamar(Context context, List<DataKamar> list_data) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.list_data = list_data;
@@ -26,16 +26,16 @@ public class AdapterBangunan extends RecyclerView.Adapter<AdapterBangunan.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_bangunan, parent, false);
+        View view = inflater.inflate(R.layout.list_kamar, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        DataBangunan listbangunan = list_data.get(position);
+        DataKamar listKamar = list_data.get(position);
 //        Glide.with(context).load(listObat.getIdGambar()).into(holder.image);
-        holder.txt_NamaBangunan.setText(listbangunan.getNamaBangunan());
-        holder.txt_Jumlah.setText(listbangunan.getJumlah());
+        holder.txt_noKamar.setText(listKamar.getNoKamar());
+        holder.txt_statusKamar.setText(listKamar.getStatusKamar());
     }
 
     @Override
@@ -44,22 +44,21 @@ public class AdapterBangunan extends RecyclerView.Adapter<AdapterBangunan.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView txt_NamaBangunan, txt_Jumlah;
-        private ImageView EditBangunan;
+        private TextView txt_noKamar, txt_statusKamar;
+        private ImageView EditKamar;
 
         public ViewHolder(View itemView) {
             super(itemView);
             //          image=itemView.findViewById(R.id.image);
-            txt_NamaBangunan =  itemView.findViewById(R.id.txt_NamaBangunan);
-            txt_Jumlah = itemView.findViewById(R.id.txt_Jumlah);
-            EditBangunan = itemView.findViewById(R.id.EditBangunan);
-            EditBangunan.setOnClickListener(this);
+            txt_noKamar =  itemView.findViewById(R.id.txt_NoKamar);
+            txt_statusKamar = itemView.findViewById(R.id.txt_StatusKamar);
+            EditKamar = itemView.findViewById(R.id.EditKamar);
+            EditKamar.setOnClickListener(this);
         }
-
 
         @Override
         public void onClick(View v) {
-            if(v == EditBangunan){
+            if(v == EditKamar){
 //                String nama = t_Nama.getText().toString();
 //                String zat = t_Zat.getText().toString();
 //                String khasiat = t_Khasiat.getText().toString();

@@ -32,7 +32,7 @@ public class TambahBangunanActivity extends AppCompatActivity implements View.On
     private EditText NamaBangunan, JumlahKamar;
     private Button TambahBangunan;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.1.13/KosanKu/android_register_login/TambahBangunan.php";
+    private static String URL_REGIST = "http://192.168.1.8/KosanKu/android_register_login/TambahBangunan.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
